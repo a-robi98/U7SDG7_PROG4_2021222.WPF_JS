@@ -28,10 +28,14 @@ namespace Esport.Program
     /// </summary>
     internal class Program
     {
+        private static void Main()
+        {
+        }
+
         /*
         private static void Main()
         {
-            
+
             using DataContext ctx = new DataContext();
             MatchRepository repo = new MatchRepository(ctx);
             TeamRepository teamrepo = new TeamRepository(ctx);
@@ -79,7 +83,7 @@ namespace Esport.Program
 
             menu.Show();
         }
-                                                                
+
         private static void ListAll(TeamLogic logic)
         {
             Console.WriteLine(Message.Allteams());
