@@ -1,0 +1,63 @@
+﻿body {
+}
+
+h1, h3 {
+    margin: 5px;
+}
+
+#creatediv {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+    #creatediv label, input, button, p {
+        margin: 3px;
+        padding: 3px;
+    }
+
+    #creatediv p{
+        font-weight:bolder;
+    }
+
+/*#searchdiv label, input, button {
+    margin: 3px;
+    padding: 3px;
+    
+}
+
+#searchdiv {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction:column;
+}
+
+#searchdiv p {
+    font-weight: bolder;
+}
+*/
+#updatediv {
+    display: none;
+    
+}
+
+    #updatediv label, input, button, p{
+        
+        margin: 3px;
+        padding: 3px;
+    }
+
+#updatediv p {
+    font-weight: bolder;
+}
+
+table{
+    margin: 5px;
+    width: 100%;
+}
+
+thead {
+    background-color:aliceblue;
+    text-align:center;
+}
