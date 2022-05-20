@@ -23,26 +23,31 @@ namespace Esport.Logic
             this.repo = repo;
         }
 
+        // UPDATE
         public void ChangeLocation(Location item)
         {
            this.repo.Update(item);
         }
 
+        // LIST
         public IQueryable<Location> GetAllLocations()
         {
             return this.repo.GetAll();
         }
 
+        // GetOne
         public Location GetLocationById(int id)
         {
             return this.repo.GetOne(id);
         }
 
+        // CREATE
         public void InsertNewLocation(Location item)
         {
             this.repo.Insert(item);
         }
 
+        // DELETE
         public void RemoveLocation(int id)
         {
             this.repo.Remove(id);
