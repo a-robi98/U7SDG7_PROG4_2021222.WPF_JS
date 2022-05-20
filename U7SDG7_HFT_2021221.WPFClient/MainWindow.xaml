@@ -5,8 +5,83 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:U7SDG7_HFT_2021221.WPFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Esport Editor" Height="1920" Width="1080" WindowState="Maximized">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="621*"/>
+            <RowDefinition Height="1283*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.RowSpan="2" >
+            <Label Content="Locations" FontSize="24" FontWeight="SemiBold" Background="Black" Foreground="White"/>
+            <ListBox Height="350"  ItemsSource="{Binding Locations}" SelectedItem="{Binding SelectedLocation}" Grid.ColumnSpan="2">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label Content="Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedLocation.Name}" Padding="10"/>
+            <Label Content="Capacity" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedLocation.Capacity}" Padding="10"/>
+            
+                <Button Content="Create Location" Command="{Binding CreateLocationCommand}" Margin="10" Padding="10" />
+                <Button Content="Delete Location" Command="{Binding DeleteLocationCommand}" Margin="10" Padding="10" />
+                <Button Content="Update Location" Command="{Binding UpdateLocationCommand}" Margin="10" Padding="10" />
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.RowSpan="2" >
+            <Label Content="Matches" FontSize="24"  FontWeight="SemiBold" Background="Black" Foreground="White"/>
+            <ListBox Height="350" ItemsSource="{Binding Matches}" SelectedItem="{Binding SelectedMatch}" Grid.ColumnSpan="2">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label Content="Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedMatch.Name}" Padding="10"/>
+            
+                <Button Content="Create Location" Command="{Binding CreateMatchCommand}" Margin="10" Padding="10" />
+                <Button Content="Delete Location" Command="{Binding DeleteMatchCommand}" Margin="10" Padding="10" />
+                <Button Content="Update Location" Command="{Binding UpdateMatchCommand}" Margin="10" Padding="10" />
+            
+            
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.RowSpan="2" >
+            <Label Content="Teams" FontSize="24" FontWeight="SemiBold" Background="Black" Foreground="White"/>
+            <ListBox Height="350" ItemsSource="{Binding Teams}" SelectedItem="{Binding SelectedTeam}" Grid.ColumnSpan="2">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label Content="Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedTeam.Name}" Padding="10"/>
+            <Label Content="Wins" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedTeam.Wins}" Padding="10"/>
+            <Label Content="Betted Amount" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedTeam.BettedAmount}" Padding="10"/>
+            
+                <Button Content="Create Location" Command="{Binding CreateTeamCommand}" Margin="10" Padding="10" />
+                <Button Content="Delete Location" Command="{Binding DeleteTeamCommand}" Margin="10" Padding="10" />
+                <Button Content="Update Location" Command="{Binding UpdateTeamCommand}" Margin="10" Padding="10" />
+            
+        </StackPanel>
     </Grid>
 </Window>
