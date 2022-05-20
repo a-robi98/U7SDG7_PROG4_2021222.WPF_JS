@@ -82,8 +82,9 @@ namespace Esport.Endpoint
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
-                .WithOrigins("http://localhost:29904"));
-                app.UseRouting();
+                .WithOrigins("http://localhost:39081"));
+
+            app.UseRouting();
 
             app.UseAuthorization();
 
