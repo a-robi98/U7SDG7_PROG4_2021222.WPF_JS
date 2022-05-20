@@ -3,11 +3,47 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="StyleSheet.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Matches</h1>
+    <h1>Locations</h1>
+    <h3>Create, read, update or delete your location data</h3>
+    <div id="creatediv">
+        <p>Create location data</p>
+        <label>Name</label>
+        <input type="text" id="createname" />
+        <label>Capacity</label>
+        <input type="text" id="createcap" />
+        <button type="button" onclick="create()">Create location</button>
+    </div>
+    <!--<div id="searchdiv">
+        <p>Search through data</p>
+        <input type="text" id="searchid" />
+        <button type="button" onclick="search('')">Search</button>
+    </div>-->
+    <div id="updatediv">
+        <p>Update</p>
+        <label>Name</label>
+        <input type="text" id="updatename" />
+        <label>Capacity</label>
+        <input type="text" id="updatecap" />
+        <button type="button" onclick="update()">Update</button>
+    </div>
 
-    <script src="JavaScript.js"></script>>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Capacity</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody id="locationresult">
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
